@@ -2,15 +2,85 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>ระบบบันทึกกิจกรรม</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Activity Log App</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>ระบบบันทึกกิจกรรม (Activity Log)</h1>
-    <p>นี่คือหน้าเว็บสำหรับทดสอบกระบวนการ DevOps</p>
-    <ul>
-        <li>กิจกรรมที่ 1: จัดเตรียม Source Code</li>
-        <li>กิจกรรมที่ 2: สร้าง Docker Container</li>
-        <li>กิจกรรมที่ 3: รัน CI/CD Pipeline</li>
-    </ul>
+
+    <div class="container">
+
+        <header>
+            <span class="badge">DEVOPS PROJECT</span>
+            <h1>Activity Log</h1>
+            <p>ระบบบันทึกกิจกรรม</p>
+        </header>
+
+        <section class="card">
+
+            <h2>เพิ่มกิจกรรม</h2>
+
+            <form id="activityForm">
+
+                <div class="form-group">
+                    <label for="title">ชื่อกิจกรรม</label>
+
+                    <input
+                        type="text"
+                        id="title"
+                        placeholder="เช่น เรียน GitHub"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="description">รายละเอียด</label>
+
+                    <textarea
+                        id="description"
+                        placeholder="รายละเอียดกิจกรรม..."
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit">
+                    + เพิ่มกิจกรรม
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="card">
+
+            <div class="section-header">
+                <h2>รายการกิจกรรม</h2>
+
+                <span id="activityCount">
+                    0 รายการ
+                </span>
+            </div>
+
+            <div id="activityList">
+
+                <div class="empty">
+                    ยังไม่มีกิจกรรม
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            Activity Log App • DevOps
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
